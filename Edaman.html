@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>API Food Call - Edaman</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
+    var food = "chicken";
+    var foodURL = "https://api.edamam.com/search?q=chicken&app_id=e074d398&app_key=c8fd43f5044c655732878dee8b34a346"
+    //CORS workaround o we can access data
+    var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+    var queryURL = cors_api_url + foodURL;
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+
+    }).then(function (response) {
+      console.log(response);
+    });
+  </script>
+
+</body>
+
+</html>
+
