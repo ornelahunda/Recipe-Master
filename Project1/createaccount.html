@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+            <title>Create Account</title>
+            <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+            <link rel = "stylesheet"
+               href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+            <link rel = "stylesheet"
+               href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+            <script type = "text/javascript"
+               src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+            <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+            </script> 
+    </head>
+
+    <body>
+      <h3>Please create an account</h3>
+      <form>
+       <body class = "container">   
+            <div class = "row">
+                <form class = "col s12">
+                        <div class = "input-field col s12">
+                                 <label for = "name">Username</label>
+                                      <input placeholder = "Username" value = "Bobby Flay" id = "name" type = "text" class = "active validate" required />        
+                        </div>
+                                             
+                        <div class = "input-field col s12">      
+                                  <label for = "password">Password</label>
+                                      <input id = "password" type = "password" placeholder = "Password" class = "validate" required />          
+                        </div>
+                        
+                        <div class = "input-field col s12">      
+                                  <label for = "reenter-password">Re-enter Password</label>
+                                      <input id = "reenter-password" type = "password" placeholder = "Password" class = "validate" required />          
+                        </div>
+
+                        <div class = "input-field col s12">
+                                  <label for = "email">Email</label>
+                                      <input placeholder = "Email" id = "email" type = "email" class = "validate">
+                        </div>
+                        <center>
+                        <div class="row">
+                            <button type='submit' name='btn_newaccount' class='col s12 btn btn-large waves-effect grey'>Create My Account</button>
+                        </div> 
+                        </center>  
+                        </form>    
+
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+  </html>
