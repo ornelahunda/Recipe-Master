@@ -15,7 +15,7 @@ var database = firebase.database();
 
 // ===========================User Account Management===========================
 
-// NEED: Create onClick function to house account creation section 
+// NEED: Function to house account creation section 
     // variables to capture user email and password inputs for use in the createUser method
 
     // createUser method to be linked to account creation form in html
@@ -41,3 +41,22 @@ var database = firebase.database();
 
 // close account login section===========================
 
+// NEED: Function to setup UI event listeners and register Firebase auth listeners
+
+    // Listen for changes to auth state
+    firebase.auth().onAuthStateChanged(function(user) {
+
+        if (user) {
+            // User is signed in
+            var email = user.email;
+            var uid = user.uid;
+
+        } else {
+            // User is signed out
+        }
+
+    });
+
+// close auth state listener section===========================
+
+// Initialize UI event listener function
