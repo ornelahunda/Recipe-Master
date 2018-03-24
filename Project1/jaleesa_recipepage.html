@@ -5,40 +5,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Recipe Page</title>
-
+  <link href="assets/recipepage.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-
- 
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Bree+Serif|Josefin+Slab|Prompt" rel="stylesheet">
+  
   <!-- Let browser know website is optimized for mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    .input-field input[type=text]:focus+label {
-      color: rgb(220, 117, 20);
-    }
-
-    .input-field input[type=text]:focus {
-      border-bottom: 2px solid rgb(220, 117, 20);
-      box-shadow: none;
-    }
-
-    body {
-      background-color: #ff6d01;
-    }
-
-    .container-fluid {
-      background-color: white;
-    }
-  </style>
+  
 </head>
 
 <body>
   <div class="container-fluid">
     <!-- nav bar -->
-
     <nav>
       <div class="nav-wrapper orange accent-4">
-        <a href="#" class="brand-logo">Logo</a>
+        <a href="#" class="brand-logo">Recipe Master</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li>
             <a href="sass.html">Home</a>
@@ -75,9 +57,9 @@
     <div class="row">
       <div class="col s12">
         <div class="input-field col s12 orange-text accent-4">
-          <i class="material-icons prefix">textsms</i>
+          <i class="large material-icons prefix">search</i>
           <input type="text" id="autocomplete-input" class="autocomplete">
-          <label for="autocomplete-input">Autocomplete</label>
+          <label for="autocomplete-input">Search here for recipes</label>
         </div>
       </div>
     </div>
@@ -101,9 +83,12 @@
       </a>
     </div>
     <!-- end of the carousel -->
+
+    <div class=" container col 2"></div>
     <!-- choosen recipe -->
+   
     <div class="row">
-      <div class="col s12 m10">
+      <div class="col s10">
         <div class="card">
           <div class="card-content blue-grey-text">
             <span class="card-title">
@@ -122,7 +107,7 @@
     <!-- end choosen recipe -->
     <!-- ingredients -->
     <div class="row">
-      <div class="col s12 m5">
+      <div class="col s5">
         <div class="collection card with header blue-grey-text">
           <ul>
             <li class="collection-header">
@@ -138,7 +123,7 @@
       </div>
       <!-- end ingredients -->
       <!-- nutrition info -->
-      <div class="col s12 m5">
+      <div class="col s5">
         <div class="card blue-grey-text">
           <span class="card-title">
             <h5>Nutrition Facts</h5>
@@ -155,7 +140,7 @@
     <!-- end nutrition info -->
     <!-- directions -->
     <div class="row">
-      <div class="col s12 m10">
+      <div class="col s10">
         <div class="card blue-grey-text">
           <span class="card-title">Directions</span>
           <p>1. Sweet roll chocolate bar sesame snaps cupcake pastry oat cake oat cake gummies. Carrot cake gummi bears croissant.
@@ -175,6 +160,7 @@
       </div>
     </div>
     <!-- end directions -->
+    <div class="container col 2"></div>
     <!-- google maps section -->
     <div class="row-center">
       <div  id="map" style="height: 500px; height: 500px;"></div>
@@ -204,6 +190,21 @@
  <script src="googleMaps.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXWeXP29EM7UT3Oc4Z75uF7CMFflw1V6I&libraries=places&callback=initMap"></script>
  
+  <script>
+    //jquery for photo carousel
+    $(document).ready(function () {
+      $('.carousel').carousel();
+    });
+    //end of photo carousel
+    //jquery for dropdown
+    //TO DO fix dropdown
+    $(document).ready(function () {
+      console.log('yoo');
+      console.log($(".dropdown-trigger"));
+      $(".dropdown-trigger").dropdown({ hover: false });
+    });
+  //end dropdown
+  </script>
 </body>
 
 
