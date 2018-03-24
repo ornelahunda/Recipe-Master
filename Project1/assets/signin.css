@@ -12,6 +12,10 @@ body {
     background: #fff;
   }
 
+  .brand-logo{
+    font-family: 'Josefin Slab', serif;
+    }
+
   .input-field input[type=date]:focus+label,
   .input-field input[type=text]:focus+label,
   .input-field input[type=email]:focus+label,

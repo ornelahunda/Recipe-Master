@@ -1,3 +1,7 @@
+.brand-logo{
+  font-family: 'Josefin Slab', serif;
+  }
+  
 .input-field input[type=user-name]:focus,
     .input-field input[type=password]:focus,
     .input-field input[type=reenter-password]:focus,
