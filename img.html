@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Img API</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
+    var food = "chicken parmesan";
+    var imgURL = "https://pixabay.com/api/?key=8461570-232e401d48810814e19e97b4c&q=" +food+ "&image_type=photo";
+    //CORS workaround so we can access data
+    var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+    var queryURL = cors_api_url + imgURL;
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+
+    }).then(function (response) {
+      console.log(response);
+    });
+  </script>
+
+</body>
+
+</html>
