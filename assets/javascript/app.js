@@ -25,7 +25,7 @@ $("#submit").on("click", function (event) {
     event.preventDefault();
     // variables to capture user email and password inputs for use in the createUser method
     userName = $("#name").val().trim();
-    password = $("#reenter-password").val().trim()
+    password = $("#reenter-password").val().trim();
     email = $("#email").val().trim();
 
     console.log(userName);
@@ -51,24 +51,33 @@ $("#submit").on("click", function (event) {
         }
         console.log(error);
     });
-});
 // close account creation section===========================
-
-// NEED: Create onClick function to house account login section 
-// variables to capture user email and password inputs for use in the signIn method
-
-// signIn method to be linked to account login form in html
-firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
 });
+
+// NEED: Create onClick function to house account login section
+$("#signIn").on("click", function(event){ 
+    // variables to capture user email and password inputs for use in the signIn method
+    email = $("#email").val().trim();
+    password = $("password").val().trim();
+    console.log(email);
+    console.log(password);
+
+    // signIn method to be linked to account login form in html
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+        // ...
+    });
+console.log(currentUser);
 
 // close account login section===========================
+});
 
 // NEED: Function to setup UI event listeners and register Firebase auth listeners
-
+function authListen() {
 // Listen for changes to auth state
 firebase.auth().onAuthStateChanged(function (user) {
 
@@ -80,10 +89,13 @@ firebase.auth().onAuthStateChanged(function (user) {
 
     } else {
         // User is signed out
+        user = anonymous;
     }
 
 });
-
-// close auth state listener section===========================
-
+}
 // Initialize UI event listener function
+window.onload = function() {
+    authListen();
+// close auth state listener section===========================
+};
