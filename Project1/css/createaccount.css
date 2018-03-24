@@ -1,0 +1,7 @@
+.input-field input[type=user-name]:focus,
+    .input-field input[type=password]:focus,
+    .input-field input[type=reenter-password]:focus,
+    .input-field input[type=email]:focus {
+      border-bottom: 2px solid #ff6d01;
+      box-shadow: none;
+    }
