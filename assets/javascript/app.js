@@ -1,12 +1,14 @@
 // FireBase script to add to html
-{/* <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script> */ }
+/* <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script> */
 
 // ===========================Initialize FireBase===========================
 var config = {
     apiKey: "AIzaSyDwsEKJrFnanQ1pW5X6DoQcB7aGjHBZvUg",
     authDomain: "recipe-master-7f905.firebaseapp.com",
     databaseURL: "https://recipe-master-7f905.firebaseio.com",
-    storageBucket: "recipe-master-7f905.appspot.com"
+    projectId: "recipe-master-7f905",
+    storageBucket: "recipe-master-7f905.appspot.com",
+    messagingSenderId: "345236552850"
 };
 
 firebase.initializeApp(config);
@@ -51,14 +53,14 @@ $("#submit").on("click", function (event) {
         }
         console.log(error);
     });
-// close account creation section===========================
+    // close account creation section===========================
 });
 
 // NEED: Create onClick function to house account login section
-$("#signIn").on("click", function(event){ 
+$("#signIn").on("click", function (event) {
     // variables to capture user email and password inputs for use in the signIn method
     email = $("#email").val().trim();
-    password = $("password").val().trim();
+    password = $("#password").val().trim();
     console.log(email);
     console.log(password);
 
@@ -69,33 +71,42 @@ $("#signIn").on("click", function(event){
         var errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);
+        console.log("Logged in!")
         // ...
     });
-console.log(currentUser);
+    // close account login section===========================
+});
 
-// close account login section===========================
+// NEED: Create onClick function to signOut
+$("#signOut").on("click", function (event) {
+    firebase.auth().signOut().then(function () {
+        console.log("Logged out!")
+    }, function (error) {
+        console.log(error.code);
+        console.log(error.message);
+    });
+    // close signOut section===========================
 });
 
 // NEED: Function to setup UI event listeners and register Firebase auth listeners
 function authListen() {
-// Listen for changes to auth state
-firebase.auth().onAuthStateChanged(function (user) {
+    // Listen for changes to auth state
+    firebase.auth().onAuthStateChanged(function (user) {
 
-    if (user) {
-        // User is signed in
-        var userName = user.userName;
-        var email = user.email;
-        var uid = user.uid;
+        if (user) {
+            // User is signed in
+            var userName = user.userName;
+            var email = user.email;
+            var uid = user.uid;
 
-    } else {
-        // User is signed out
-        user = anonymous;
-    }
+        } else {
+            // User is signed out
+        }
 
-});
+    });
 }
 // Initialize UI event listener function
-window.onload = function() {
+window.onload = function () {
     authListen();
-// close auth state listener section===========================
+    // close auth state listener section===========================
 };
